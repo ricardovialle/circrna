@@ -1,8 +1,6 @@
 process COMBINE_BEDS {
     tag "$meta.id"
-    label "process_low"
-    label "process_long"
-    label "run_local"
+    label "process_medium"
 
     conda "${moduleDir}/environment.yml"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
