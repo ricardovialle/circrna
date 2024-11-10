@@ -1,7 +1,7 @@
 process COMBINE_BEDS {
     tag "$meta.id"
-    label "process_medium"
-    label "disk_100GB"
+    label "process_low"
+    cache false
 
     conda "${moduleDir}/environment.yml"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
