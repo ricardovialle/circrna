@@ -1,7 +1,6 @@
 process COMBINE_BEDS {
     tag "$meta.id"
     label "process_low"
-    cache true
 
     conda "${moduleDir}/environment.yml"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
@@ -16,7 +15,7 @@ process COMBINE_BEDS {
 
     output:
     tuple val(meta), path("${prefix}.${suffix}"), emit: combined
-    path "*.png"                                , emit: plots, optional: true
+    //path "*.png"                                , emit: plots, optional: true
     path "*.json"                               , emit: multiqc, optional: true
     path "versions.yml"                         , emit: versions
 
