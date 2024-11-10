@@ -59,15 +59,15 @@ for col in ["samples", "tools"]:
     if series.explode().n_unique() == 1:
         continue
     memberships = series.to_list()
-    dataset = upsetplot.from_memberships(memberships)
-    upsetplot.plot(dataset,
-                   orientation='horizontal',
-                   show_counts=True,
-                   subset_size="count")
-    plot_file = f"{prefix}_{col}.upset.png"
-    plt.savefig(plot_file)
+    # dataset = upsetplot.from_memberships(memberships)
+    # upsetplot.plot(dataset,
+    #                orientation='horizontal',
+    #                show_counts=True,
+    #                subset_size="count")
+    # plot_file = f"{prefix}_{col}.upset.png"
+    # plt.savefig(plot_file)
 
-    image_string = base64.b64encode(open(plot_file, "rb").read()).decode("utf-8")
+    # image_string = base64.b64encode(open(plot_file, "rb").read()).decode("utf-8")
     image_html = f'<div class="mqc-custom-content-image"><img src="data:image/png;base64,{image_string}" /></div>'
 
     multiqc = {
