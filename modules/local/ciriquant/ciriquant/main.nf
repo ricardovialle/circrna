@@ -1,7 +1,7 @@
 process CIRIQUANT {
     tag "$meta.id"
     label 'process_high'
-    label 'disk_150GB'
+    label 'disk_250GB'
 
     container "docker.io/nicotru/ciriquant:1.0.4"
 
