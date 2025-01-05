@@ -1,8 +1,8 @@
 process CIRIQUANT {
     tag "$meta.id"
     label 'process_high'
-    label 'disk_250GB'
-    label 'cpu_24'
+    label 'disk_high'
+    label 'cpu_high'
 
     container "docker.io/nicotru/ciriquant:1.0.4"
 
